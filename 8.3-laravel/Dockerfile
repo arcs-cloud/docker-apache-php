@@ -23,7 +23,7 @@ RUN	\
     # Apache settings
     && cp /dev/null ${APACHE_CONF_DIR}/conf-available/other-vhosts-access-log.conf \
     && rm ${APACHE_CONF_DIR}/sites-enabled/000-default.conf ${APACHE_CONF_DIR}/sites-available/000-default.conf \
-    && a2enmod rewrite php8.3 \
+    && a2enmod rewrite php8.3 headers \
 	# Install composer
 	&& curl -sS https://getcomposer.org/installer | php -- --version=2.2.7 --install-dir=/usr/local/bin --filename=composer \
 	# Cleaning
